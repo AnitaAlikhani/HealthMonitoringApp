@@ -94,6 +94,7 @@ export default function Signup() {
         sx={{ mb: "32px" }}
         onClick={() => {
           if (isPatient) router.push("/user/patient/register");
+          else router.push("/user/doctor/register");
         }}
       >
         ثبت‌نام

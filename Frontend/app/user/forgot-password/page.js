@@ -131,7 +131,7 @@ export default function ForgotPassword() {
           </Stack>
           <Button
             sx={{ mb: "32px" }}
-            onClick={() => router.push("/user/patient/register")}
+            onClick={() => router.push("/user/login")}
           >
             تایید
           </Button>

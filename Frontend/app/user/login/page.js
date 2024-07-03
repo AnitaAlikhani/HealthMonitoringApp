@@ -4,9 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/logo.svg";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function Login() {
   const router = useRouter();
+  const [pass, setPass] = useState("");
   return (
     <Stack p="16px" gap="16px" minHeight="100vh" justifyContent="center">
       <Image
@@ -25,11 +27,17 @@ export default function Login() {
       </Stack>
       <Stack gap="8px">
         <Typography>رمز عبور</Typography>
-        <TextField></TextField>
+        <TextField
+          value={pass}
+          onChange={(e) => setPass(e.target.value)}
+        ></TextField>
       </Stack>
       <Button
         sx={{ mb: "32px" }}
-        onClick={() => router.push("/user/patient/register")}
+        onClick={() => {
+          if (pass === "p") router.push("/user/patient/register");
+          else if (pass === "d") router.push("/user/doctor/register");
+        }}
       >
         ورود
       </Button>
